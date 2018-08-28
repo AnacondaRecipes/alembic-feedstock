@@ -1,7 +1,7 @@
 {% set name = "alembic" %}
-{% set version = "0.9.10" %}
+{% set version = "1.0.0" %}
 {% set hash_type = "sha256" %}
-{% set hash = "1cd32df9a3b8c1749082ef60ffbe05ff16617b6afadfdabc680dcb9344af33d7" %}
+{% set hash = "52d73b1d750f1414fa90c25a08da47b87de1e4ad883935718a8f36396e19e78e" %}
 {% set bundle = "tar.gz" %}
 {% set build = 0 %}
 
@@ -27,7 +27,7 @@ requirements:
 
   run:
     - python
-    - sqlalchemy >=0.7.6
+    - sqlalchemy >=0.9.0
     - mako
     - python-editor >=0.3
     - python-dateutil
