@@ -1,30 +1,23 @@
-{% set name = "alembic" %}
-{% set version = "1.0.8" %}
-{% set hash_type = "sha256" %}
-{% set hash = "505d41e01dc0c9e6d85c116d0d35dbb0a833dcb490bf483b75abeb06648864e8" %}
-{% set bundle = "tar.gz" %}
-{% set build = 0 %}
+{% set version = "1.0.9" %}
 
 package:
-  name: {{ name }}
+  name: alembic
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ bundle }}
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
-  {{ hash_type }}: {{ hash }}
+  url: https://pypi.org/packages/source/a/alembic/alembic-{{ version }}.tar.gz
+  sha256: 40b9a619aa5f25ea1e1508adcda88b33704ef28e02c9cfa6471e5c772ecf0829
 
 build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - alembic = alembic.config:main
-  number: 0
-  script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
   host:
     - python
-    - setuptools
-
+    - pip
   run:
     - python
     - sqlalchemy >=0.9.0
