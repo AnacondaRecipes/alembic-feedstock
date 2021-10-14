@@ -1,6 +1,6 @@
 {% set name = "alembic" %}
-{% set version = "1.6.4" %}
-{% set hash = "becb572c6701c90ca249f97fc1ae231468cc9516df367a350901eeb9310a8d43" %}
+{% set version = "1.7.4" %}
+{% set hash = "9d33f3ff1488c4bfab1e1a6dfebbf085e8a8e1a3e047a43ad29ad1f67f012a1d" %}
 {% set bundle = "tar.gz" %}
 
 package:
@@ -21,7 +21,7 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python
     - pip
     - wheel
     - setuptools
@@ -41,9 +41,14 @@ test:
     - alembic.runtime
     - alembic.script
     - alembic.util
-
+  
+  requires:
+    - pip
+    - python <3.10
+  
   commands:
     - alembic --help
+    - pip check
 
 about:
   home: https://bitbucket.org/zzzeek/alembic
