@@ -13,7 +13,7 @@ source:
   sha256: {{ hash }}
 
 build:
-  number: 0
+  number: 1
   skip: True  # [py<36]
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
@@ -30,8 +30,8 @@ requirements:
     - python >=3.6
     - mako
     - sqlalchemy >=1.3.0
-    - importlib-metadata  # [py<39]
-    - importlib_resources  # [py<39]
+    - importlib-metadata
+    - importlib_resources
     # Optional dependencies
     - python-dateutil
 
