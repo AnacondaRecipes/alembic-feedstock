@@ -23,15 +23,12 @@ requirements:
   host:
     - python
     - pip
-    - setuptools
+    - setuptools >=47
     - wheel
   run:
     - python
     - mako
     - sqlalchemy >=1.3.0
-    # Keeping noarch: python for now but may need to constrain these 2 as upstream
-    # https://alembic.sqlalchemy.org/en/latest/changelog.html#change-1.7.0
-    # These packages are needed for python <3.9
     - importlib-metadata
     - importlib_resources
     # Optional dependencies
