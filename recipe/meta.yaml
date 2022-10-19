@@ -46,7 +46,6 @@ test:
   requires:
     - pip
     - python
-    - pytest
   commands:
     - alembic --help
     - pip check
@@ -59,6 +58,7 @@ about:
   summary: A database migration tool for SQLAlchemy.
   dev_url: https://github.com/sqlalchemy/alembic
   doc_url: https://alembic.sqlalchemy.org/en/latest/
+  doc_source_url: https://github.com/sqlalchemy/alembic/tree/main/docs/build
 
 extra:
   recipe-maintainers:
