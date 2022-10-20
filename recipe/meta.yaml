@@ -45,7 +45,6 @@ test:
     - alembic.util
   requires:
     - pip
-    - python
   commands:
     - alembic --help
     - pip check
