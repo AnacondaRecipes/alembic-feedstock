@@ -53,8 +53,6 @@ about:
   summary: A database migration tool for SQLAlchemy.
   description: Alembic is a lightweight database migration tool for usage with the SQLAlchemy Database Toolkit for Python.
   dev_url: https://github.com/sqlalchemy/alembic
-  doc_url: https://alembic.sqlalchemy.org/en/latest/
-  doc_source_url: https://github.com/sqlalchemy/alembic/tree/main/docs/build
 
 extra:
   recipe-maintainers:
