@@ -20,7 +20,7 @@ requirements:
   host:
     - python
     - pip
-    - setuptools
+    - setuptools >=61.2
     - wheel
   run:
     - python
