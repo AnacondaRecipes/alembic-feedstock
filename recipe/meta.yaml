@@ -29,6 +29,8 @@ requirements:
     - typing-extensions >=4.12
 
 test:
+  source_files:
+    - tests
   imports:
     - alembic
     - alembic.autogenerate
@@ -39,9 +41,11 @@ test:
     - alembic.util
   requires:
     - pip
+    - pytest
   commands:
     - alembic --help
     - pip check
+    - pytest -vv tests
 
 about:
   home: https://github.com/sqlalchemy/alembic
@@ -51,7 +55,7 @@ about:
   summary: A database migration tool for SQLAlchemy.
   description: Alembic is a lightweight database migration tool for usage with the SQLAlchemy Database Toolkit for Python.
   dev_url: https://github.com/sqlalchemy/alembic
-  doc_url: https://alembic.sqlalchemy.org/en/latest/
+  doc_url: https://alembic.sqlalchemy.org
 
 extra:
   recipe-maintainers:
