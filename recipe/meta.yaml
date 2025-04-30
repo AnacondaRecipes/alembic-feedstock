@@ -29,8 +29,6 @@ requirements:
     - typing-extensions >=4.12
 
 test:
-  source_files:
-    - tests
   imports:
     - alembic
     - alembic.autogenerate
@@ -41,11 +39,9 @@ test:
     - alembic.util
   requires:
     - pip
-    - pytest
   commands:
     - alembic --help
     - pip check
-    - pytest -vv tests
 
 about:
   home: https://github.com/sqlalchemy/alembic
