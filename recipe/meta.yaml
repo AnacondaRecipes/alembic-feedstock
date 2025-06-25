@@ -1,5 +1,5 @@
 {% set name = "alembic" %}
-{% set version = "1.15.2" %}
+{% set version = "1.16.2" %}
 
 package:
   name: {{ name }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1c72391bbdeffccfe317eefba686cb9a3c078005478885413b95c3b26c57a8a7
+  sha256: e53c38ff88dadb92eb22f8b150708367db731d58ad7e9d417c9168ab516cbed8
 
 build:
   number: 0
-  skip: True  # [py<39]
+  skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
     - alembic = alembic.config:main
@@ -20,13 +20,14 @@ requirements:
   host:
     - python
     - pip
-    - setuptools >=61.2
-    - wheel
+    - setuptools >=77.0.3
   run:
     - python
     - mako
     - sqlalchemy >=1.4.0
     - typing-extensions >=4.12
+    - typing_extensions >=4.12
+    - tomli  # [py<311]
 
 test:
   imports:
