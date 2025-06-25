@@ -45,6 +45,13 @@ test:
     - alembic.script.revision
     - alembic.testing
     - alembic.testing.assertions
+    - alembic.testing.env
+    - alembic.testing.fixtures
+    - alembic.testing.requirements
+    - alembic.testing.suite
+    - alembic.util
+    - alembic.util.messaging
+    - alembic.util.sqla_compat
   requires:
     - pip
   commands:
