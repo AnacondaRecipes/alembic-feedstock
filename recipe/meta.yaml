@@ -32,11 +32,19 @@ test:
   imports:
     - alembic
     - alembic.autogenerate
+    - alembic.autogenerate.compare
+    - alembic.config
     - alembic.ddl
+    - alembic.environment
+    - alembic.migration
     - alembic.operations
-    - alembic.runtime
+    - alembic.operations.base
+    - alembic.operations.batch
+    - alembic.runtime.migration
     - alembic.script
-    - alembic.util
+    - alembic.script.revision
+    - alembic.testing
+    - alembic.testing.assertions
   requires:
     - pip
   commands:
