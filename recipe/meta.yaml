@@ -21,12 +21,12 @@ requirements:
     - python
     - pip
     - setuptools >=77.0.3
+    - wheel
   run:
     - python
     - mako
     - sqlalchemy >=1.4.0
     - typing-extensions >=4.12
-    - typing_extensions >=4.12
     - tomli  # [py<311]
 
 test:
