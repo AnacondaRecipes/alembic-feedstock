@@ -21,7 +21,6 @@ requirements:
     - python
     - pip
     - setuptools >=77.0.3
-    - wheel
   run:
     - python
     - mako
@@ -45,7 +44,7 @@ test:
     - pip check
 
 about:
-  home: https://github.com/sqlalchemy/alembic
+  home: https://alembic.sqlalchemy.org
   license_file: LICENSE
   license: MIT
   license_family: MIT
