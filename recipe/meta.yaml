@@ -40,6 +40,7 @@ test:
     - alembic.operations
     - alembic.operations.base
     - alembic.operations.batch
+    - alembic.runtime
     - alembic.runtime.migration
     - alembic.script
     - alembic.script.revision
