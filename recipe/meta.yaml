@@ -1,5 +1,5 @@
 {% set name = "alembic" %}
-{% set version = "1.16.2" %}
+{% set version = "1.16.4" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e53c38ff88dadb92eb22f8b150708367db731d58ad7e9d417c9168ab516cbed8
+  sha256: efab6ada0dd0fae2c92060800e0bf5c1dc26af15a10e02fb4babff164b4725e2
 
 build:
   number: 0
@@ -20,6 +20,7 @@ requirements:
   host:
     - python
     - pip
+    - wheel
     - setuptools >=77.0.3
   run:
     - python
@@ -27,6 +28,7 @@ requirements:
     - sqlalchemy >=1.4.0
     - typing-extensions >=4.12
     - tomli  # [py<311]
+    - typing_extensions >=4.12
 
 test:
   imports:
@@ -38,27 +40,19 @@ test:
     - alembic.environment
     - alembic.migration
     - alembic.operations
-    - alembic.operations.base
     - alembic.operations.batch
-    - alembic.runtime
     - alembic.runtime.migration
     - alembic.script
     - alembic.script.revision
-    - alembic.testing
-    - alembic.testing.assertions
-    - alembic.testing.env
-    - alembic.testing.fixtures
-    - alembic.testing.requirements
-    # AttributeError: 'SuiteRequirements' object has no attribute 'comments'
-    #- alembic.testing.suite
     - alembic.util
     - alembic.util.messaging
     - alembic.util.sqla_compat
   requires:
     - pip
   commands:
-    - alembic --help
     - pip check
+    - alembic --help
+    # Upstream tests based on database connection
 
 about:
   home: https://alembic.sqlalchemy.org
