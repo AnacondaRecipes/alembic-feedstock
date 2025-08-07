@@ -20,7 +20,6 @@ requirements:
   host:
     - python
     - pip
-    - wheel
     - setuptools >=77.0.3
   run:
     - python
@@ -28,7 +27,6 @@ requirements:
     - sqlalchemy >=1.4.0
     - typing-extensions >=4.12
     - tomli  # [py<311]
-    - typing_extensions >=4.12
 
 test:
   imports:
@@ -40,7 +38,9 @@ test:
     - alembic.environment
     - alembic.migration
     - alembic.operations
+    - alembic.operations.base
     - alembic.operations.batch
+    - alembic.runtime
     - alembic.runtime.migration
     - alembic.script
     - alembic.script.revision
@@ -50,8 +50,8 @@ test:
   requires:
     - pip
   commands:
-    - pip check
     - alembic --help
+    - pip check
     # Upstream tests based on database connection
 
 about:
