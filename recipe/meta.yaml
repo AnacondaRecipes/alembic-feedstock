@@ -2,7 +2,7 @@
 {% set version = "1.16.4" %}
 
 package:
-  name: {{ name }}
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
@@ -20,6 +20,7 @@ requirements:
   host:
     - python
     - pip
+    - wheel
     - setuptools >=77.0.3
   run:
     - python
