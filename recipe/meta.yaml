@@ -27,7 +27,6 @@ requirements:
     - sqlalchemy >=1.4.0
     - typing-extensions >=4.12
     - tomli  # [py<311]
-    - typing_extensions >=4.12
 
 test:
   imports:
