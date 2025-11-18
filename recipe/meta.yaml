@@ -1,5 +1,5 @@
 {% set name = "alembic" %}
-{% set version = "1.17.1" %}
+{% set version = "1.17.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8a289f6778262df31571d29cca4c7fbacd2f0f582ea0816f4c399b6da7528486
+  sha256: bbe9751705c5e0f14877f02d46c53d10885e377e3d90eda810a016f9baa19e8e
 
 build:
   number: 0
-  skip: true  # [py<310]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
     - alembic = alembic.config:main
+  skip: true  # [py<310]
 
 requirements:
   host:
@@ -47,13 +47,13 @@ test:
     - alembic.util
     - alembic.util.messaging
     - alembic.util.sqla_compat
-  requires:
-    - pip
   commands:
-    - alembic --help
     - pip check
     - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
+    - alembic --help
     # Upstream tests based on database connection
+  requires:
+    - pip
 
 about:
   home: https://alembic.sqlalchemy.org
