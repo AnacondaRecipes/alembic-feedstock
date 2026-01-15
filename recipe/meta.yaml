@@ -1,5 +1,5 @@
 {% set name = "alembic" %}
-{% set version = "1.17.2" %}
+{% set version = "1.18.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bbe9751705c5e0f14877f02d46c53d10885e377e3d90eda810a016f9baa19e8e
+  sha256: 83ac6b81359596816fb3b893099841a0862f2117b2963258e965d70dc62fb866
 
 build:
   number: 0
@@ -51,7 +51,7 @@ test:
     - pip check
     - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
     - alembic --help
-    # Upstream tests based on database connection
+  # Upstream tests based on database connection
   requires:
     - pip
 
