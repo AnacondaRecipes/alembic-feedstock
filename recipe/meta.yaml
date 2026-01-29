@@ -1,5 +1,5 @@
 {% set name = "alembic" %}
-{% set version = "1.18.0" %}
+{% set version = "1.18.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0c4c03c927dc54d4c56821bdcc988652f4f63bf7b9017fd9d78d63f09fd22b48
+  sha256: 1c3ddb635f26efbc80b1b90c5652548202022d4e760f6a78d6d85959280e3684
 
 build:
   number: 0
@@ -27,6 +27,7 @@ requirements:
     - sqlalchemy >=1.4.0
     - typing-extensions >=4.12
     - tomli  # [py<311]
+    - typing_extensions >=4.12
 
 test:
   imports:
@@ -51,7 +52,7 @@ test:
     - pip check
     - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
     - alembic --help
-    # Upstream tests based on database connection
+  # Upstream tests based on database connection
   requires:
     - pip
 
