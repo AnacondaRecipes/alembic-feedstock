@@ -23,11 +23,10 @@ requirements:
     - setuptools >=77.0.3
   run:
     - python
+    - sqlalchemy >=1.4.23
     - mako
-    - sqlalchemy >=1.4.0
     - typing-extensions >=4.12
     - tomli  # [py<311]
-    - typing_extensions >=4.12
 
 test:
   imports:
