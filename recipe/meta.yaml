@@ -1,5 +1,5 @@
 {% set name = "alembic" %}
-{% set version = "1.19.1" %}
+{% set version = "1.20.0" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e0fca0518118c78acc493e31bcb5402f190057aaf6df8b5b95ce94c4789cf648
+  sha256: db505480647bc60386c5369402f4a57a506b7539c9e9ef5e270d45cbbe4939bf
 
 build:
   number: 0
@@ -23,7 +23,7 @@ requirements:
     - setuptools >=77.0.3
   run:
     - python
-    - sqlalchemy >=1.4.23
+    - sqlalchemy >=2.0
     - mako
     - typing-extensions >=4.12
     - tomli  # [py<311]
